@@ -1,9 +1,10 @@
 export default function Home() {
+  //https://vizer.tv
   return (
     <div className="w-screen h-screen">
       <div className="relative w-full h-full">
-        <iframe className="w-full h-full" src="" allowFullScreen></iframe>//https://vizer.tv
-        <div className="absolute flex flex-col items-center w-20 p-2 mx-8 text-white bg-opacity-25 rounded-full h-60 bg-dockPurple top-20 ">
+        <iframe className="w-full h-full" src="" allowFullScreen></iframe>
+        <div className="absolute flex flex-col items-center w-20 p-2 mx-8 text-white bg-opacity-25 rounded-full h-44 bg-dockPurple top-20 ">
           <div className="m-2">
             <div className="p-6">
               <button onClick={handleShutdown}>
@@ -23,46 +24,6 @@ export default function Home() {
                   />
                   <path
                     d="M7.50366 1V7.99898"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="p-6">
-              <button onClick={handleFullScreen}>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.66669 1H14V5.33333"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M5.33333 14H1V9.66669"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M14 1L8.94446 6.05556"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M1 14L6.05556 8.94446"
                     stroke="white"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -104,20 +65,16 @@ export default function Home() {
   );
 }
 
-async function handleShutdown(){
-  const res = await fetch(`./api/control/shutdown`)
-  const data = await res.json()
-  
-  console.log(data)
-};
+async function handleShutdown() {
+  const res = await fetch(`./api/control/shutdown`);
+  const data = await res.json();
 
-async function handleMinimize(){
-  const res = await fetch(`./api/control/minimize`)
-  const data = await res.json()
-  
-  console.log(data)
-};
+  console.log(data);
+}
 
-function handleFullScreen(){
-  console.log("Full screen");
-};
+async function handleMinimize() {
+  const res = await fetch(`./api/control/minimize`);
+  const data = await res.json();
+
+  console.log(data);
+}
