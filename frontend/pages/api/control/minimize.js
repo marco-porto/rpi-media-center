@@ -1,6 +1,6 @@
 import ks from "node-key-sender";
 export default function handler(req, res) {
-   ks.sendCombination(['alt', 'tab']);
+   ks.sendCombination(['alt', 'h']);
    res.status(200).json({ message: "Minimize" }); //macro => alt + h
 }
 /*
